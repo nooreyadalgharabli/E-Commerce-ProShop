@@ -1,0 +1,122 @@
+.LoginStyle {
+    background-color: white;
+    padding: 0 40px 50px 100px;
+    .loginLS{
+        // padding: 20px;
+        width: 80%;
+        h1{
+            font-size: 50px;
+            font-weight: bold;
+        }
+        p{
+            color: #c9c9c9;
+            font-size: 25px;
+        }
+        .emailStyle{
+            .ant-input {
+                margin: 10px 0;
+                width: 80%;
+                border-color: black;
+            }
+        }
+        .passwordStyle{
+            .ant-input-password  {
+                margin: 10px 0;
+                width: 80%;
+                border-color: black;
+            }
+        }
+        .TextStyle{
+            font-size: 20px;
+            font-weight: unset;
+        }
+       .loginButton {
+        margin: 10px 0;
+        width: 80%;
+        background-color: #fcdd06;
+        color: black;
+       }
+       .ant-checkbox-wrapper {
+        width: 80%;
+        color: #d9d9d9;
+       }
+       .pStyle {
+        width: 80%;
+        font-size: 20px;
+        text-align: center;
+        color: black;
+        margin: 0;
+       }
+       .ant-divider {
+        color: #bebebe;
+        width: 80%;
+        min-width: unset;
+        border-block-start: 3px solid #bebebe;
+        margin: 20px 0;
+       }
+       .signUpButton {
+        width: 80%;
+        text-align: center;
+        .ant-btn {
+            border-color: #fcdd06;
+            border-width: 2px;
+            width: 50%;
+        }
+       }
+    }
+}
+
+.SignupStyle {
+    background-color: white;
+    padding: 0 40px 50px 100px;
+    .signupLS{
+        width: 80%;
+        h1{
+            font-size: 50px;
+            font-weight: bold;
+        }
+        p{
+            color: #c9c9c9;
+            font-size: 25px;
+        }
+        .emailStyle{
+            .ant-input {
+                margin: 10px 0;
+                border-color: black;
+            }
+        }
+        .passwordStyle{
+            .ant-input-password  {
+                margin: 10px 0;
+                border-color: black;
+            }
+        }
+        .TextStyle{
+            font-size: 20px;
+            font-weight: unset;
+            display: block;
+        }
+       .SignupButton {
+        margin: 10px 0;
+        width: 100%;
+        background-color: #fcdd06;
+        color: black;
+       }
+       .ant-divider {
+        color: #bebebe;
+        min-width: unset;
+        border-block-start: 3px solid #bebebe;
+        margin: 20px 0;
+       }
+       .textstyle {
+        font-size: 20px;
+        font-weight: unset;
+        color: #a5a5a5;
+        padding-right: 5px;
+       }
+       .textLinkStyle{
+        font-size: 20px;
+        font-weight: unset;
+       }
+    }
+}

@@ -15,7 +15,7 @@ body {
 .contentStyle {
   text-align:left;
   min-height: fit-content;
-  line-height: 120px;
+  // line-height: 120px;
   // color: #fff;
   // background-color: #108ee9;
 };
@@ -57,7 +57,9 @@ body {
     color: black;
     background-color: #fcdd06;
   }
-  
+  :where(.css-dev-only-do-not-override-1me4733) a {
+    color: white;
+  }
 }
 
 :where(.css-dev-only-do-not-override-1me4733).ant-layout, :where(.css-dev-only-do-not-override-1me4733).ant-layout * {
