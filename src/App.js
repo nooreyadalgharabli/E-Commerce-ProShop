@@ -7,6 +7,7 @@ import MainContent from './components/Content/mainContent/MainContent';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import LoginContainer from './components/Content/Login-SignUp/LoginContainer';
 import SignUpContainer from './components/Content/Login-SignUp/SignUpContainer';
+import ProductContainer from './components/Content/Products/ProductContainer';
 
 const { Header, Content } = Layout;
 
@@ -25,7 +26,8 @@ function App() {
             <Route path='/' element={<MainContent/>}/>
             <Route path='/login' element={<LoginContainer/>} />
             <Route path='/SignUp' element={<SignUpContainer/>} />
-            
+            <Route path='/Products/:id' element={<ProductContainer/>} />
+                        
           </Routes>
           </Content>
 

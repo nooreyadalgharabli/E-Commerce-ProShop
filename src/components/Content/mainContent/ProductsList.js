@@ -2,6 +2,8 @@ import React from "react";
 import { useSelector } from "react-redux";
 import { Badge, Button, Card, List, Rate } from "antd";
 import { BookmarkIcon } from "@radix-ui/react-icons";
+import { Link } from "react-router-dom";
+
 
 const ProductsList = () => {
   const { data } = useSelector((state) => state.Products);
@@ -25,6 +27,7 @@ const ProductsList = () => {
       renderItem={(item) => (
         <List.Item>
           <Card style={{ backgroundColor: "white" }}>
+          <Link to={`/Products/${item._id}`}>
             <Badge
               count={
                 item.discount === 0
@@ -77,6 +80,8 @@ const ProductsList = () => {
               )}
             </div>
 
+            </Link>
+            
             <div>
               <Button icon={<BookmarkIcon />} />
               <Button type="primary" style={{ marginLeft: 20 }}>

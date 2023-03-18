@@ -1,0 +1,61 @@
+.ProductStyle {
+    background-color: white;
+    padding: 30px 0;
+    .ProductDescriptionStyle{
+        padding-left: 50px;
+        .ant-typography {
+            font-size:small ;
+        }
+        .leftSide {
+            margin-top: 50px;
+            text-align: center;
+            .images {
+                margin: 30px 0;
+            }
+        }
+        .rightSide {
+            .ant-typography {
+                font-size:x-large;
+            }
+            :where(.css-dev-only-do-not-override-1me4733).ant-input-number-group {
+                width: 50%;
+                margin: 10px 10px 10px 0;
+            }
+            :where(.css-dev-only-do-not-override-1me4733).ant-input-number-group .ant-input-number-group-addon {
+                border: 1px solid #fcdd06;
+                background-color: unset;
+            }
+            :where(.css-dev-only-do-not-override-1me4733).ant-input-number .ant-input-number-input {
+                text-align: center;
+            }
+            
+            .colorStyle, .categoriesStyle {
+                margin: 10px 10px 10px 0;
+                .ant-typography {
+                    font-size: large;
+                }
+                :where(.css-dev-only-do-not-override-1me4733).ant-btn.ant-btn-circle{
+                    margin-right: 15px;
+                }
+            }
+            .categoriesStyle {
+                :where(.css-dev-only-do-not-override-1me4733).ant-btn-default {
+                    background-color: #f5f5f5;
+                    margin-right: 15px;
+                }
+            }
+            .priceStyle {
+                text-align: center;
+                margin-right: 20px;
+                p{
+                    margin: 0;
+                    padding: 0;
+                    font-weight: bold;
+                }
+            }
+            
+            
+        }
+    }
+    
+}
