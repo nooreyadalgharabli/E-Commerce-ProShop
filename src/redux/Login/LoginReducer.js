@@ -1,4 +1,4 @@
-import { FETCH_PRODUCT_FAILURE, FETCH_PRODUCT_REQUEST, FETCH_PRODUCT_SUCCESS } from "./Types"
+import { FETCH_LOGIN_FAILURE, FETCH_LOGIN_REQUEST, FETCH_LOGIN_SUCCESS } from "./Types"
 
 const initialState = {
     loading: false,
@@ -8,18 +8,18 @@ const initialState = {
 
 const Reducer = (state=initialState, action) => {
     switch(action.type){
-        case FETCH_PRODUCT_REQUEST:
+        case FETCH_LOGIN_REQUEST:
             return {
                 ...state,
                 loading: true,
             }
-        case FETCH_PRODUCT_SUCCESS:
+        case FETCH_LOGIN_SUCCESS:
             return {
                 ...state,
                 loading: false,
                 data: action.payload,
             }
-        case FETCH_PRODUCT_FAILURE:
+        case FETCH_LOGIN_FAILURE:
             return {
                 ...state,
                 loading: false,

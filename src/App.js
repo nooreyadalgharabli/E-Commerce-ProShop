@@ -8,6 +8,7 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import LoginContainer from './components/Content/Login-SignUp/LoginContainer';
 import SignUpContainer from './components/Content/Login-SignUp/SignUpContainer';
 import ProductContainer from './components/Content/Products/ProductContainer';
+import SearchPage from './components/Header/SearchPage';
 
 const { Header, Content } = Layout;
 
@@ -23,10 +24,12 @@ function App() {
 
           <Content className='contentStyle'>
           <Routes>
+           
             <Route path='/' element={<MainContent/>}/>
             <Route path='/login' element={<LoginContainer/>} />
             <Route path='/SignUp' element={<SignUpContainer/>} />
-            <Route path='/Products/:id' element={<ProductContainer/>} />
+            <Route path='/Products/:id' element={<ProductContainer/>} />           
+            <Route path='/Search/:filterData' element={<SearchPage/>} />            
                         
           </Routes>
           </Content>

@@ -6,6 +6,7 @@ import { LoadingOutlined } from "@ant-design/icons";
 import "./ProductDetaile.scss";
 import ProductsContainer from "../mainContent/ProductsContainer";
 import ProductDescription from "./ProductDescription";
+import Reviews from "./Reviews";
 
 
 const ProductContainer = () => {
@@ -26,6 +27,8 @@ const ProductContainer = () => {
   ) : (
     <div className="ProductStyle">
       <ProductDescription/>
+
+      <Reviews/>
 
       <ProductsContainer />
     </div>

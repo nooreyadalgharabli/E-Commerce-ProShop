@@ -40,7 +40,7 @@ const CarouselContainer = () => {
               <Button type="primary">Shop now</Button>
             </div>
 
-            <Image width={300} src={image[index]} />
+            <Image width={300} src={image[index]} preview={false} />
           </Space>
           </div>
         );

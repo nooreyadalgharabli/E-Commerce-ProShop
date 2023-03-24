@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import { Button, InputNumber, Space, Typography } from "antd";
 import { useSelector } from "react-redux";
+import { BookmarkIcon } from "@radix-ui/react-icons";
 
 const { Text } = Typography;
 
@@ -87,23 +88,31 @@ const ProductDescription = () => {
               : null}
           </div>
 
-          <div className="categoriesStyle">
-            <Text style={{ color: "#a5a5a5" }}>Categories: </Text>
-            <Text>{categories}</Text>
-            <br />
-            {data.categories
-              ? data.categories.map((item) => {
-                  return (
-                    <Button
-                      onClick={() => {
-                        setCategories(item);
-                      }}
-                    >
-                      {item}
-                    </Button>
-                  );
-                })
-              : null}
+          <div style={{ display: "flex", justifyContent: "space-between" }}>
+            <div className="categoriesStyle">
+              <Text style={{ color: "#a5a5a5" }}>Categories: </Text>
+              <Text>{categories}</Text>
+              <br />
+              {data.categories
+                ? data.categories.map((item) => {
+                    return (
+                      <Button
+                        onClick={() => {
+                          setCategories(item);
+                        }}
+                      >
+                        {item}
+                      </Button>
+                    );
+                  })
+                : null}
+            </div>
+            <div style={{margin: 10, alignSelf:'flex-end'}}>
+              <Button style={{borderColor:'#fcdd06'}} icon={<BookmarkIcon />} />
+              <Button type="primary" style={{ marginLeft: 20, backgroundColor:'#fcdd06', color:'black', width:150 }}>
+                Add to card
+              </Button>
+            </div>
           </div>
 
           {/*

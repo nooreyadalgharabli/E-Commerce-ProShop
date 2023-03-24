@@ -12,29 +12,41 @@
             color: #c9c9c9;
             font-size: 25px;
         }
-        .emailStyle{
-            .ant-input {
-                margin: 10px 0;
-                width: 80%;
-                border-color: black;
-            }
+        // .emailStyle{
+        //     .ant-input {
+        //         margin: 10px 0;
+        //         width: 80%;
+        //         border-color: black;
+        //     }
+        // }
+        // .passwordStyle{
+        //     .ant-input-password  {
+        //         margin: 10px 0;
+        //         width: 80%;
+        //         border-color: black;
+        //     }
+        // }
+        :where(.css-dev-only-do-not-override-1me4733).ant-form-item .ant-form-item-label >label.ant-form-item-required:not(.ant-form-item-required-mark-optional)::before {
+            display: none;
         }
-        .passwordStyle{
-            .ant-input-password  {
-                margin: 10px 0;
-                width: 80%;
-                border-color: black;
-            }
+        :where(.css-dev-only-do-not-override-1me4733).ant-form-item .ant-form-item-label >label {
+            font-size: 20px;
+        }
+        .ant-input, .ant-input-password{
+            border-color: black;
         }
         .TextStyle{
             font-size: 20px;
             font-weight: unset;
         }
        .loginButton {
-        margin: 10px 0;
+        // margin: 10px 0;
         width: 80%;
         background-color: #fcdd06;
         color: black;
+       }
+       .ant-col{
+        margin: 0;
        }
        .ant-checkbox-wrapper {
         width: 80%;
@@ -79,28 +91,37 @@
             color: #c9c9c9;
             font-size: 25px;
         }
-        .emailStyle{
-            .ant-input {
-                margin: 10px 0;
-                border-color: black;
-            }
+        // .emailStyle{
+        //     .ant-input {
+        //         margin: 10px 0;
+        //         border-color: black;
+        //     }
+        // }
+        // .passwordStyle{
+        //     .ant-input-password  {
+        //         margin: 10px 0;
+        //         border-color: black;
+        //     }
+        // }
+        // .TextStyle{
+        //     font-size: 20px;
+        //     font-weight: unset;
+        //     display: block;
+        // }
+        :where(.css-dev-only-do-not-override-1me4733).ant-form-item .ant-form-item-label >label.ant-form-item-required:not(.ant-form-item-required-mark-optional)::before {
+            display: none;
         }
-        .passwordStyle{
-            .ant-input-password  {
-                margin: 10px 0;
-                border-color: black;
-            }
-        }
-        .TextStyle{
+        :where(.css-dev-only-do-not-override-1me4733).ant-form-item .ant-form-item-label >label {
             font-size: 20px;
-            font-weight: unset;
-            display: block;
         }
        .SignupButton {
         margin: 10px 0;
         width: 100%;
         background-color: #fcdd06;
         color: black;
+       }
+       .ant-col{
+        margin: 0;
        }
        .ant-divider {
         color: #bebebe;
