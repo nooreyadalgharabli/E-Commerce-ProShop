@@ -1,4 +1,4 @@
-import { FETCH_LOGIN_FAILURE, FETCH_LOGIN_REQUEST, FETCH_LOGIN_SUCCESS } from "./Types"
+import { FETCH_PROFILE_FAILURE, FETCH_PROFILE_REQUEST, FETCH_PROFILE_SUCCESS } from "./Types"
 
 const initialState = {
     loading: false,
@@ -8,21 +8,21 @@ const initialState = {
 
 const Reducer = (state=initialState, action) => {
     switch(action.type){
-        case FETCH_LOGIN_REQUEST:
+        case FETCH_PROFILE_REQUEST:
             return {
                 ...state,
                 loading: true,
                 data:[],
-                error:''
+                error:'',
             }
-        case FETCH_LOGIN_SUCCESS:
+        case FETCH_PROFILE_SUCCESS:
             return {
                 ...state,
                 loading: false,
                 data: action.payload,
                 error: '',
             }
-        case FETCH_LOGIN_FAILURE:
+        case FETCH_PROFILE_FAILURE:
             return {
                 ...state,
                 loading: false,

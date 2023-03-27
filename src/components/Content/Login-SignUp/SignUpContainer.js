@@ -1,7 +1,7 @@
 import React from "react";
 import { useDispatch, useSelector } from "react-redux";
 import image1 from "../../../images/Group 421-signup.png";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { Button, Divider, Form, Input, message, Space, Typography } from "antd";
 import { fetchSignUp } from "../../../redux";
 
@@ -10,30 +10,21 @@ const { Title, Text } = Typography;
 const SignUpContainer = () => {
   const { error } = useSelector((state) => state.SignUp);
   const dispatch = useDispatch();
+  const navigate = useNavigate();
 
   const onFinish = (values) => {
-    dispatch(fetchSignUp(values))
-    // setTimeout(() => {
-    //   console.log({ error });
-    //   console.log("Success:", values);
-    //   message.open({
-    //     type: error ? "error" : "success",
-    //     content: error ? error : "signup success",
-    //   });
-    // }, 10000);
+    dispatch(fetchSignUp(values,navigate))
+  
     console.log({error})
     console.log("Success:", values);
     
-    // message.open({
-    //   type: error ? "error" : "success",
-    //   content: error ? error : 'signup success',
-    // })
+    message.open({
+      type: error ? "error" : "success",
+      content: error ? error : 'signup success',
+    })
   };
 
   const onFinishFailed = (errorInfo) => {
-    // Modal.error({
-    //   title: "Sign up failed"
-    // })
     message.open({
       type: "error",
       content: "Sign up failed",

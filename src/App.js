@@ -9,6 +9,8 @@ import LoginContainer from './components/Content/Login-SignUp/LoginContainer';
 import SignUpContainer from './components/Content/Login-SignUp/SignUpContainer';
 import ProductContainer from './components/Content/Products/ProductContainer';
 import SearchPage from './components/Header/SearchPage';
+import CartContainer from './components/Content/Cart/CartContainer';
+import ProfileContainer from './components/Content/Profile/ProfileContainer';
 
 const { Header, Content } = Layout;
 
@@ -29,7 +31,10 @@ function App() {
             <Route path='/login' element={<LoginContainer/>} />
             <Route path='/SignUp' element={<SignUpContainer/>} />
             <Route path='/Products/:id' element={<ProductContainer/>} />           
-            <Route path='/Search/:filterData' element={<SearchPage/>} />            
+            <Route path='/Search/:filterData' element={<SearchPage/>} />  
+            <Route path='/Cart' element={<CartContainer/>} />
+            <Route path='/profile/:id' element={<ProfileContainer/>} />
+                   
                         
           </Routes>
           </Content>

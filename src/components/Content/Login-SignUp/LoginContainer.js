@@ -1,8 +1,8 @@
-import { Alert, Button, Checkbox, Divider, Form, Input, Space, Typography } from "antd";
+import { Button, Checkbox, Divider, Form, Input, message, Space, Typography } from "antd";
 import React from "react";
 import "./Login-Signp.scss";
 import image1 from "../../../images/Group240-login.png";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { useDispatch } from "react-redux";
 import { fetchLogin } from "../../../redux";
 
@@ -14,16 +14,27 @@ const onChange = (e) => {
 
 const LoginContainer = () => {
 
+  // const { error } = useSelector((state) => state.Login);
   const dispatch = useDispatch();
+  const navigate = useNavigate();
 
   const onFinish = (values) => {
-    dispatch(fetchLogin(values));
-    <Alert message="Success sign up" closable type="success" />
+    dispatch(fetchLogin(values,navigate));
+    
+    // message.open({
+    //   type:  error ? "error" : "success",
+    //   content: error ? error : 'Login success',
+    // })
+
     console.log("Success:", values);
   };
+
   const onFinishFailed = (errorInfo) => {
-    <Alert message={errorInfo} closable type="error" />
     console.log("Failed:", errorInfo);
+    message.open({
+      type: "error",
+      content: "Login failed",
+    });
   };
 
   return (

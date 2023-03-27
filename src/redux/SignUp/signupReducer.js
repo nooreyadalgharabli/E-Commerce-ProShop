@@ -18,11 +18,13 @@ const Reducer = (state=initialState, action) => {
                 ...state,
                 loading: false,
                 data: action.payload,
+                error: '',
             }
         case FETCH_SIGNUP_FAILURE:
             return {
                 ...state,
                 loading: false,
+                data: [],
                 error: action.payload
             }
         

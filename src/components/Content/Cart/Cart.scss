@@ -1,0 +1,16 @@
+.Cartstyle {
+    background-color: white;
+    padding: 30px 50px;
+    .ant-typography {
+        font-size:small ;
+    }
+    .emptyCart {
+        text-align: center;
+        .ant-typography {
+            margin-bottom: 10px;
+            font-size:large ;
+            display: block;
+        }
+    }
+
+}

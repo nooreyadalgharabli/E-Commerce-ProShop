@@ -17,7 +17,7 @@ const HeaderRS = () => {
         <Row> 
           <Col span={6}> <Link to = '/login'> <p>Login / Sign Up</p> </Link>  </Col>
           <Col span={4}> <p>Wishlist</p> </Col>
-          <Col span={4}> <p>Cart</p> </Col>    
+          <Col span={4}> <Link to = '/Cart'> <p>Cart</p> </Link> </Col>    
         </Row>
   
       
