@@ -7,6 +7,7 @@ import SearchReducer from "./SearchProducts/SearchReducer"
 import signupReducer from "./SignUp/signupReducer"
 import loginReducer from "./Login/LoginReducer"
 import ProfileReducer from "./Profile/ProfileReducer"
+import CartReducer from "./AddToCart/CartReducer"
 
 const rootReducer = combineReducers({
     TopRate: TopRateReducer,
@@ -16,7 +17,9 @@ const rootReducer = combineReducers({
     SearchProducts: SearchReducer,
     SignUp: signupReducer,
     Login: loginReducer,
-    Profile: ProfileReducer
+    Profile: ProfileReducer,
+    Cart: CartReducer
+
 })
 
 export default rootReducer

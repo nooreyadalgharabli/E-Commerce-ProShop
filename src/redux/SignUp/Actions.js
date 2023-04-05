@@ -1,6 +1,6 @@
 import axios from 'axios';
 import { FETCH_SIGNUP_FAILURE, FETCH_SIGNUP_REQUEST, FETCH_SIGNUP_SUCCESS } from './Types';
-import Cookies from 'js-cookie';
+// import Cookies from 'js-cookie';
 
 export const fetchSignUp = (data, navigate) => {
     return (dispatch) => {
@@ -9,7 +9,8 @@ export const fetchSignUp = (data, navigate) => {
           .then(response => {
             const data = response.data
             dispatch(fetchSignUpSuccess(data))
-            Cookies.set('profile', JSON.stringify(data), { expires: 7 });
+            // Cookies.set('profile', JSON.stringify(data), { expires: 7 });
+            localStorage.setItem('profile', JSON.stringify(data), { expires: 7 });
             navigate(`/profile/${data._id}`)
             })
           .catch(error => {

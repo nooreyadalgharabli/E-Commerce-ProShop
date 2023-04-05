@@ -1,10 +1,13 @@
 import { BookmarkIcon } from "@radix-ui/react-icons";
 import { Button, Card, List, Rate } from "antd";
 import React from "react";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
+import { fetchCart } from "../../../redux";
 
 const TopRateProductList = () => {
   const { data } = useSelector((state) => state.TopRate);
+  const dispatch = useDispatch();
+
 
   return (
     <List
@@ -35,7 +38,7 @@ const TopRateProductList = () => {
 
             <div style={{ marginTop:10}}>
               <Button icon={<BookmarkIcon />} />
-              <Button type="primary" style={{ marginLeft: 20 }}>
+              <Button type="primary" style={{ marginLeft: 20 }} onClick={() => {dispatch(fetchCart({productId : item._id, qty: 1}))}}>
                 Add to card
               </Button>
             </div>

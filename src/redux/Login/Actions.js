@@ -1,6 +1,6 @@
 import axios from 'axios';
 import { FETCH_LOGIN_FAILURE, FETCH_LOGIN_REQUEST, FETCH_LOGIN_SUCCESS } from './Types';
-import Cookies from 'js-cookie';
+// import Cookies from 'js-cookie';
 
 export const fetchLogin = (data, navigate) => {
     return (dispatch) => {
@@ -9,7 +9,8 @@ export const fetchLogin = (data, navigate) => {
           .then(response => {
             const data = response.data
             dispatch(fetchLoginSuccess(data))
-            Cookies.set('profile', JSON.stringify(data), { expires: 7 });
+            // Cookies.set('profile', JSON.stringify(data), { expires: 7 });
+            localStorage.setItem('profile', JSON.stringify(data), { expires: 7 });
             navigate(`/profile/${data._id}`)
             })
           .catch(error => {

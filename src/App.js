@@ -11,10 +11,14 @@ import ProductContainer from './components/Content/Products/ProductContainer';
 import SearchPage from './components/Header/SearchPage';
 import CartContainer from './components/Content/Cart/CartContainer';
 import ProfileContainer from './components/Content/Profile/ProfileContainer';
+import Authorization from './Auth/Authorization';
+import NotAuthorize from './Auth/NotAuthorize';
 
 const { Header, Content } = Layout;
 
 function App() {
+  // const isAuthLogin = useSelector((state) => state.Login);
+  // const isAuthSignUp = useSelector((state) => state.SignUp);
   return (
     <BrowserRouter>
     <Provider store={store}>
@@ -28,12 +32,12 @@ function App() {
           <Routes>
            
             <Route path='/' element={<MainContent/>}/>
-            <Route path='/login' element={<LoginContainer/>} />
-            <Route path='/SignUp' element={<SignUpContainer/>} />
+            <Route path='/login' element={ <Authorization>  <LoginContainer/>  </Authorization>} />
+            <Route path='/SignUp' element={<Authorization>   <SignUpContainer/>   </Authorization> } />
             <Route path='/Products/:id' element={<ProductContainer/>} />           
             <Route path='/Search/:filterData' element={<SearchPage/>} />  
             <Route path='/Cart' element={<CartContainer/>} />
-            <Route path='/profile/:id' element={<ProfileContainer/>} />
+            <Route path='/profile/:id' element={<NotAuthorize> <ProfileContainer/> </NotAuthorize> } />
                    
                         
           </Routes>

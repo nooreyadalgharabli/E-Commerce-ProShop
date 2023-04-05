@@ -1,13 +1,15 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import { Button, InputNumber, Space, Typography } from "antd";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { BookmarkIcon } from "@radix-ui/react-icons";
+import { fetchCart } from "../../../redux";
 
 const { Text } = Typography;
 
 const ProductDescription = () => {
   const { data } = useSelector((state) => state.ProductDetails);
+  const dispatch = useDispatch();
   const [color, setColor] = useState("-");
   const [categories, setCategories] = useState("-");
 
@@ -109,7 +111,7 @@ const ProductDescription = () => {
             </div>
             <div style={{margin: 10, alignSelf:'flex-end'}}>
               <Button style={{borderColor:'#fcdd06'}} icon={<BookmarkIcon />} />
-              <Button type="primary" style={{ marginLeft: 20, backgroundColor:'#fcdd06', color:'black', width:150 }}>
+              <Button type="primary" style={{ marginLeft: 20, backgroundColor:'#fcdd06', color:'black', width:150 }} onClick={() => {dispatch(fetchCart({productId : data._id, qty: 1}))}}>
                 Add to card
               </Button>
             </div>

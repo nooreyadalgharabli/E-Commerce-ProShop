@@ -13,4 +13,42 @@
         }
     }
 
+    .CartListStyle {
+        :where(.css-dev-only-do-not-override-1me4733).ant-input-number-group {
+            width: 70%;
+            margin: 10px 10px 10px 0;
+        }
+        :where(.css-dev-only-do-not-override-1me4733).ant-input-number-group .ant-input-number-group-addon {
+            border: 1px solid #fcdd06;
+            background-color: white;
+        }
+        :where(.css-dev-only-do-not-override-1me4733).ant-input-number .ant-input-number-input {
+            text-align: center;
+        }
+
+        .ant-card  {
+            background-color: #f2f2f2;
+            margin: 20px;
+        }
+        .totalCartStyle {
+            p{
+                font-size: 16px;
+                font-weight: bold;
+            }
+            text-align: center;
+            .buttonStyle {
+                background-color: #fcdd06;
+                // justify-content: center;
+            }
+            .ant-card-body {
+                padding: 10px 0;
+            }
+            :where(.css-dev-only-do-not-override-1me4733).ant-divider {
+                border-block-start: 2px solid rgba(5, 5, 5, 0.06);
+            }
+        }
+        
+    }
+
+
 }

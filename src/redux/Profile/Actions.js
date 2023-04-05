@@ -1,11 +1,13 @@
 import axios from 'axios';
-import Cookies from 'js-cookie';
+// import Cookies from 'js-cookie';
 import { FETCH_PROFILE_FAILURE, FETCH_PROFILE_REQUEST, FETCH_PROFILE_SUCCESS } from './Types';
 
 export const fetchProfile = () => {
     return (dispatch) => {
         dispatch(fetchProfileRequest())
-        const token = JSON.parse(Cookies.get('profile')).token;
+        // const token = JSON.parse(Cookies.get('profile')).token;
+        const token = JSON.parse(localStorage.getItem('profile')).token;
+        console.log(token)
           axios.get('https://prohop-express.herokuapp.com/api/users/profile',{headers: {'Authorization': 'Bearer ' + token}})
           .then(response => {
             const data = response.data

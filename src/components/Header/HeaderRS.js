@@ -5,6 +5,7 @@ import { Badge, Col, Row } from 'antd';
 import { Link } from "react-router-dom"
 
 const HeaderRS = () => {
+  const data = JSON.parse(localStorage.getItem("profile"));
   return (
     <div className='headerRS'>
       
@@ -15,7 +16,7 @@ const HeaderRS = () => {
         </Row>
 
         <Row> 
-          <Col span={6}> <Link to = '/login'> <p>Login / Sign Up</p> </Link>  </Col>
+          <Col span={6}> <Link to = '/login'> {!data ? <p>Login / Sign Up</p> : <p>Profile</p>} </Link>  </Col>
           <Col span={4}> <p>Wishlist</p> </Col>
           <Col span={4}> <Link to = '/Cart'> <p>Cart</p> </Link> </Col>    
         </Row>

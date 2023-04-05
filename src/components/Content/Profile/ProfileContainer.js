@@ -5,7 +5,7 @@ import { UserOutlined } from "@ant-design/icons";
 import { useDispatch, useSelector } from "react-redux";
 import { fetchProfile } from "../../../redux";
 import { Link } from "react-router-dom";
-import Cookies from 'js-cookie';
+// import Cookies from 'js-cookie';
 
 
 const { Title, Text } = Typography;
@@ -22,22 +22,22 @@ const ProfileContainer = () => {
   return (
     <div className="profileStyle">
       <Row>
-        <Col className="ProfileLS" flex={1 / 2}>
+        <Col className="ProfileLS" span={8}>
           <div style={{ paddingLeft: 50 }}>
             <Avatar size={100} icon={<UserOutlined />} />
-            <Text style={{ paddingLeft: 30, paddingRight:10 }}>{data.firstName} {data.lastName}</Text>
+            <Text style={{ paddingLeft: 30, paddingRight:10, fontSize: 30 }}>{data.firstName} {data.lastName}</Text>
           </div>
           <Title level={4}>My Orders</Title>
           <Title level={4}>Wishlist</Title>
           <Title level={4}>Notifcations</Title>
           <Title level={4}>Settings</Title>
           <Divider />
-          <Link to='/' onClick={() => Cookies.remove('profile')}>
+          <Link to='/' onClick={() => localStorage.clear()}>
           <Title level={4}>Logout</Title>
           </Link>
         </Col>
 
-        <Col className="ProfileRS" flex={3}>
+        <Col className="ProfileRS" span={15}>
           <div>
             <Title>My Profile</Title>
             <Row>
@@ -58,7 +58,7 @@ const ProfileContainer = () => {
             <Button>Change Password</Button>
           </div>
           <div className="PhotoRS">
-            <Avatar size={180} icon={<UserOutlined />} />
+            <Avatar size={180} icon={<UserOutlined />} src={data.profileImage}/>
             <Button>Upload new photo</Button>
           </div>
         </Col>

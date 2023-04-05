@@ -1,4 +1,4 @@
-import { FETCH_SIGNUP_FAILURE, FETCH_SIGNUP_REQUEST, FETCH_SIGNUP_SUCCESS } from "./Types"
+import { FETCH_CART_FAILURE, FETCH_CART_REQUEST, FETCH_CART_SUCCESS } from "./Types"
 
 const initialState = {
     loading: false,
@@ -8,21 +8,21 @@ const initialState = {
 
 const Reducer = (state=initialState, action) => {
     switch(action.type){
-        case FETCH_SIGNUP_REQUEST:
+        case FETCH_CART_REQUEST:
             return {
                 ...state,
                 loading: true,
                 data:[],
-                error:''
+                error:'',
             }
-        case FETCH_SIGNUP_SUCCESS:
+        case FETCH_CART_SUCCESS:
             return {
                 ...state,
                 loading: false,
                 data: action.payload,
                 error: '',
             }
-        case FETCH_SIGNUP_FAILURE:
+        case FETCH_CART_FAILURE:
             return {
                 ...state,
                 loading: false,
