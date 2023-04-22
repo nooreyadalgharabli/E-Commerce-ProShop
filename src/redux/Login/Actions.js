@@ -11,6 +11,7 @@ export const fetchLogin = (data, navigate) => {
             dispatch(fetchLoginSuccess(data))
             // Cookies.set('profile', JSON.stringify(data), { expires: 7 });
             localStorage.setItem('profile', JSON.stringify(data), { expires: 7 });
+            localStorage.setItem('AddDeleteCart', JSON.stringify(data), { expires: 7 });
             navigate(`/profile/${data._id}`)
             })
           .catch(error => {

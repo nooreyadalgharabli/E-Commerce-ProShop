@@ -8,6 +8,7 @@ import signupReducer from "./SignUp/signupReducer"
 import loginReducer from "./Login/LoginReducer"
 import ProfileReducer from "./Profile/ProfileReducer"
 import CartReducer from "./AddToCart/CartReducer"
+import DeleteReducer from "./DeleteFromCart/DeleteReducer"
 
 const rootReducer = combineReducers({
     TopRate: TopRateReducer,
@@ -18,7 +19,8 @@ const rootReducer = combineReducers({
     SignUp: signupReducer,
     Login: loginReducer,
     Profile: ProfileReducer,
-    Cart: CartReducer
+    Cart: CartReducer,
+    Deletecart: DeleteReducer,
 
 })
 

@@ -7,10 +7,13 @@ import "./ProductDetaile.scss";
 import ProductsContainer from "../mainContent/ProductsContainer";
 import ProductDescription from "./ProductDescription";
 import Reviews from "./Reviews";
+import { Link } from "react-router-dom";
+import { Typography } from "antd";
 
+const { Text } = Typography;
 
 const ProductContainer = () => {
-  const { loading, error } = useSelector((state) => state.ProductDetails);
+  const { loading, data, error } = useSelector((state) => state.ProductDetails);
   const dispatch = useDispatch();
   const { id } = useParams();
 
@@ -26,9 +29,14 @@ const ProductContainer = () => {
     <h2>{error}</h2>
   ) : (
     <div className="ProductStyle">
-      <ProductDescription/>
+      <Link to="/" style={{paddingLeft:50}}>
+        <Text style={{ color: "#e8e8e8", fontWeight: "bold" }}>Back / </Text>
+      </Link>
+      <Text>{data.name}</Text>
 
-      <Reviews/>
+      <ProductDescription />
+
+      <Reviews />
 
       <ProductsContainer />
     </div>

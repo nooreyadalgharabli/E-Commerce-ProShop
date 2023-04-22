@@ -1,11 +1,14 @@
 .ProductStyle {
     background-color: white;
     padding: 30px 0;
+    .ant-typography {
+        font-size:small ;
+    }
     .ProductDescriptionStyle{
         padding-left: 50px;
-        .ant-typography {
-            font-size:small ;
-        }
+        // .ant-typography {
+        //     font-size:small ;
+        // }
         .leftSide {
             margin-top: 50px;
             text-align: center;

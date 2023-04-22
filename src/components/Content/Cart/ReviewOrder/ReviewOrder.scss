@@ -1,0 +1,119 @@
+.ReviewOrderStyle {
+    background-color: white;
+    padding: 50px 100px;
+    .ant-steps {
+        width: 50%;
+    }
+    .ant-steps .ant-steps-item-process .ant-steps-item-icon {
+        background-color: #fcdd06;
+        border-color: #fcdd06; 
+        color: black;
+    }
+    .ant-steps-item-icon {
+        border-radius: unset;
+    }
+    :where(.css-dev-only-do-not-override-1me4733).ant-btn-primary {
+        background-color: #fcdd06;
+        color: black;
+        width: 200px;
+        
+    }
+    h2 {
+        font-weight: bold;
+    }
+
+    .FirstStepStyle {
+        padding: 10px 0;
+        .LS {
+            background-color: #f2f2f2;
+            border-radius: 15px;
+            margin-right: 20px;
+            padding: 10px 50px;
+        }
+        .RS {
+            background-color: #f2f2f2;
+            border-radius: 15px;
+            padding: 10px;
+            p {
+                color: #c1c1c1;
+            }
+            .header {
+                display: flex;
+                justify-content: space-between;
+                padding-top: 20px;
+                h3 {
+                    margin: unset;
+                }
+                .changeStyle {
+                    text-decoration: underline;
+                    color: #c1c1c1;
+                    font-size: small;
+                }
+
+            }
+            .list {
+                display: flex;
+                justify-content: space-between;
+                .ant-typography {
+                    color: #c1c1c1;
+                    font-size: small;
+                }
+            }
+            
+        }
+    }
+
+    .SecondStepStyle{
+
+        padding: 10px 0;
+        .LS {
+            background-color: #f2f2f2;
+            border-radius: 15px;
+            margin-right: 20px;
+            padding: 10px 50px;
+
+            h3 {
+                font-size: 20px;
+            }
+
+            .header {
+                display: flex;
+                justify-content: space-between;
+                padding-top: 20px;
+                h3 {
+                    margin: unset;
+                }
+                .changeStyle {
+                    text-decoration: underline;
+                    color: #c1c1c1;
+                    font-size: small;
+                }
+
+            }
+            .list {
+                display: flex;
+                justify-content: space-between;
+                width: 60%;
+                .ant-typography {
+                    color: #c1c1c1;
+                    font-size: small;
+                }
+            }
+        }
+        .RS {
+            .RSOrderDetail {
+                background-color: #f2f2f2;
+                border-radius: 15px;
+                padding: 10px;
+                height: fit-content;
+                p {
+                    color: #c1c1c1;
+                }
+            }
+            
+            
+            
+        }
+
+    }
+}

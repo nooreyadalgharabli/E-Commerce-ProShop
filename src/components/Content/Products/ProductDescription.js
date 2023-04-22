@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Link } from "react-router-dom";
+// import { Link } from "react-router-dom";
 import { Button, InputNumber, Space, Typography } from "antd";
 import { useDispatch, useSelector } from "react-redux";
 import { BookmarkIcon } from "@radix-ui/react-icons";
@@ -12,13 +12,18 @@ const ProductDescription = () => {
   const dispatch = useDispatch();
   const [color, setColor] = useState("-");
   const [categories, setCategories] = useState("-");
+  
+  const QTY = {productId: data._id , qty: 1}
+  localStorage.setItem('NumOfQTY', JSON.stringify(QTY), { expires: 7 });
+
+  const onChange = (value) => {
+    localStorage.setItem('NumOfQTY', JSON.stringify({productId: data._id , qty: value}), { expires: 7 });
+    console.log('changed', value);
+  };
+  
 
   return (
     <div className="ProductDescriptionStyle">
-      <Link to="/">
-        <Text style={{ color: "#e8e8e8", fontWeight: "bold" }}>Back / </Text>
-      </Link>
-      <Text>{data.name}</Text>
       <Space>
         <div className="leftSide">
           <img src={data.images} alt="not found" width={250} height={300} />
@@ -35,7 +40,7 @@ const ProductDescription = () => {
             <div>
               <Text>{data.name}</Text>
               <br />
-              <InputNumber addonBefore="-" addonAfter="+" defaultValue={1} />
+              <InputNumber addonBefore="-" addonAfter="+" defaultValue={1} min={0} onChange={onChange}/>
             </div>
             <div className="priceStyle">
               {data.discount === 0 ? (
@@ -111,7 +116,7 @@ const ProductDescription = () => {
             </div>
             <div style={{margin: 10, alignSelf:'flex-end'}}>
               <Button style={{borderColor:'#fcdd06'}} icon={<BookmarkIcon />} />
-              <Button type="primary" style={{ marginLeft: 20, backgroundColor:'#fcdd06', color:'black', width:150 }} onClick={() => {dispatch(fetchCart({productId : data._id, qty: 1}))}}>
+              <Button type="primary" style={{ marginLeft: 20, backgroundColor:'#fcdd06', color:'black', width:150 }} onClick={() => {dispatch(fetchCart(JSON.parse(localStorage.getItem('NumOfQTY'))))}}>
                 Add to card
               </Button>
             </div>

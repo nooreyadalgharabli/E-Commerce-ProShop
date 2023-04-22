@@ -1,9 +1,19 @@
 import React from "react";
 import { Button, Card, Col, Divider, InputNumber, List, Row } from "antd";
 import { CloseOutlined } from '@ant-design/icons';
+import { fetchCart, fetchDeleteCart } from "../../../redux";
+import { useDispatch } from "react-redux";
+import { Link, useNavigate } from "react-router-dom";
 
 const CartList = () => {
-  const data = JSON.parse(localStorage.getItem("profile")).cart;
+  const data = JSON.parse(localStorage.getItem("AddDeleteCart")).cart;
+  const dispatch = useDispatch();
+  const navigate = useNavigate();
+
+  // const onChange = (value) => {
+  //   localStorage.setItem('NumOfQTY', JSON.stringify({productId: data.product._id , qty: value}), { expires: 7 });
+  //   console.log('changed', value);
+  // };
 
   return (
     <div className="CartListStyle">
@@ -31,7 +41,13 @@ const CartList = () => {
                       <InputNumber
                         addonBefore="-"
                         addonAfter="+"
-                        defaultValue={1}
+                        defaultValue={item.qty}
+                        min={0}
+                        onChange={(value) => {
+                          localStorage.setItem('NumOfQTY', JSON.stringify({productId: item.product._id , qty: value}), { expires: 7 });
+                          console.log('changed', value);
+                          dispatch(fetchCart(JSON.parse(localStorage.getItem('NumOfQTY')),navigate))
+                        }}
                       />
                     </Col>
                     <Col span={4}>
@@ -69,7 +85,7 @@ const CartList = () => {
                         ) : null}
                       </div>
                     </Col>
-                    <Col span={1}> <CloseOutlined /> </Col>
+                    <Col span={1}> <CloseOutlined  onClick={() => {dispatch(fetchDeleteCart(item.product._id,navigate)); }} />  </Col>
                   </Row>
                 </Card>
               </List.Item>
@@ -81,7 +97,9 @@ const CartList = () => {
           <p>Subtotal ({data.totalQty}) items</p>
           <p> ${data.totalPrice} </p>
           <Divider/>
+          <Link to={'/Order'}>
           <Button className="buttonStyle">Proceed to checkout</Button>
+          </Link>
           </Card>
         </Col>
       </Row>

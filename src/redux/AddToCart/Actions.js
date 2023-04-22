@@ -2,7 +2,7 @@ import axios from 'axios';
 // import Cookies from 'js-cookie';
 import { FETCH_CART_FAILURE, FETCH_CART_REQUEST, FETCH_CART_SUCCESS } from './Types';
 
-export const fetchCart = (data) => {
+export const fetchCart = (data, navigate) => {
     return (dispatch) => {
         dispatch(fetchCartRequest())
         // const token = JSON.parse(Cookies.get('profile')).token;
@@ -13,7 +13,8 @@ export const fetchCart = (data) => {
             dispatch(fetchCartSuccess(data))
             // Cookies.set('Cart', JSON.stringify(data), { expires: 7 });
             // localStorage.setItem('Cart', JSON.stringify(data), { expires: 7 });
-            localStorage.setItem('profile', JSON.stringify(data), { expires: 7 });
+            localStorage.setItem('AddDeleteCart', JSON.stringify(data), { expires: 7 });
+            navigate('/Cart')
             })
           .catch(error => {
             const errorMsg = error.message
