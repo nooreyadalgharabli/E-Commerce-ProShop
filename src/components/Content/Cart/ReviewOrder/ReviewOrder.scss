@@ -117,3 +117,24 @@
 
     }
 }
+
+.PlaceOrderStyle {
+    background-color: white;
+    .TopSide {
+        margin: 100px 100px 50px;
+        padding: 20px 50px;
+        background-color: #f2f2f2;
+        border-radius: 10px;
+
+        .ant-row {
+            justify-content: left;
+        }
+    }
+
+    :where(.css-dev-only-do-not-override-1me4733).ant-btn-primary {
+        background-color: #fcdd06;
+        color: black;
+        width: 200px;
+        
+    }
+}

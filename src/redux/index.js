@@ -17,3 +17,5 @@ export {fetchProfile} from "./Profile/Actions"
 export {fetchCart} from "./AddToCart/Actions"
 
 export {fetchDeleteCart} from "./DeleteFromCart/Actions"
+
+export {fetchShippingAddress} from "./ShippingAddress/Actions"

@@ -14,6 +14,7 @@ import ProfileContainer from './components/Content/Profile/ProfileContainer';
 import Authorization from './Auth/Authorization';
 import NotAuthorize from './Auth/NotAuthorize';
 import ReviewOrder from './components/Content/Cart/ReviewOrder/ReviewOrder';
+import PlaceOrder from './components/Content/Cart/ReviewOrder/PlaceOrder';
 
 const { Header, Content } = Layout;
 
@@ -39,7 +40,8 @@ function App() {
             <Route path='/Search/:filterData' element={<SearchPage/>} />  
             <Route path='/Cart' element={<CartContainer/>} />
             <Route path='/profile/:id' element={<NotAuthorize> <ProfileContainer/> </NotAuthorize> } />
-            <Route path='/Order' element={<ReviewOrder/>} />      
+            <Route path='/Order' element={<ReviewOrder/>} />   
+            <Route path='/PlaceOrderSuccess' element={<PlaceOrder/>}/>   
                         
           </Routes>
           </Content>

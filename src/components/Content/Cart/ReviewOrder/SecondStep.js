@@ -7,13 +7,21 @@ const { Title, Text } = Typography;
 
 const SecondStep = () => {
 
-  const data = JSON.parse(localStorage.getItem("AddDeleteCart")).cart;
+  const data = JSON.parse(localStorage.getItem("AddDeleteCart"));
+  const AddressData = JSON.parse(localStorage.getItem("ShippingAddress"));
 
   return (
+    !AddressData ? <p style={{color: 'red'}}> There is something error. please Verify your data</p> : 
     <div className="SecondStepStyle">
     <Row>
       <Col className="LS" span={15}>
         <Title level={3}>Shipping Address</Title>
+
+        <div>
+          <p> {data.firstName} {data.lastName}</p>
+          <p> {AddressData.order.shippingAddress.address} ,{AddressData.order.shippingAddress.city}</p>
+          <p> {AddressData.order.shippingAddress.country} - {AddressData.order.shippingAddress.postalCode}</p>
+        </div>
 
 
         <div className="header">
@@ -22,7 +30,7 @@ const SecondStep = () => {
         </div>
         <List
           itemLayout="horizontal"
-          dataSource={data.items}
+          dataSource={data.cart.items}
           renderItem={(item, index) => (
             <List.Item>
               <List.Item.Meta
@@ -42,7 +50,7 @@ const SecondStep = () => {
         />
 
 
-        <Title level={3}>Payment Details</Title>
+  {/*      <Title level={3}>Payment Details</Title>    */}
 
         
       </Col>
@@ -55,18 +63,18 @@ const SecondStep = () => {
           <p> Subtotal</p>
           <p> Tax </p>
           <p> Shipping </p>
-          <p> Total</p>
+          <p style={{fontWeight: 'bold', color: 'black'}}> Total</p>
         </Col>
         <Col>
-          <p> ${data.totalPrice}</p>
-          <p> - </p>
-          <p> - </p>
-          <p> -</p>
+          <p> ${data.cart.totalPrice}</p>
+          <p> ${AddressData.order.taxPrice} </p>
+          <p> {AddressData.order.shippingPrice} </p>
+          <p style={{fontWeight: 'bold', color: 'black'}}> ${AddressData.order.totalPrice}</p>
         </Col>
         </div>
         </div>
         <div style={{ marginTop: 24, display:'flex', justifyContent:'right'}} > 
-        <Button type="primary"> Place Order </Button>
+        <Link to='/PlaceOrderSuccess'> <Button type="primary"> Place Order </Button> </Link>
         </div>
       </Col>
       

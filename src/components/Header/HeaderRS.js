@@ -18,7 +18,7 @@ const HeaderRS = () => {
         <Row> 
           <Col span={6}> <Link to = '/login'> {!data ? <p>Login / Sign Up</p> : <p>Profile</p>} </Link>  </Col>
           <Col span={4}> <p>Wishlist</p> </Col>
-          <Col span={4}> <Link to = '/Cart'> <p>Cart</p> </Link> </Col>    
+          <Col span={4}> <Link to = '/Cart'> <p onClick={() => localStorage.removeItem("ShippingAddress")}>Cart</p> </Link> </Col>    
         </Row>
   
       

@@ -28,7 +28,7 @@ const CarouselContainer = () => {
   ) : error ? (
     <h2>{error}</h2>
   ) : (
-    <Carousel autoplay>
+    <Carousel autoplay style={{backgroundColor:'#f5f5f5'}}>
       {data.map(({  price, name, description }, index) => {
         return (
           <div>

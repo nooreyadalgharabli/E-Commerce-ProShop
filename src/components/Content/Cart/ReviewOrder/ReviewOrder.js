@@ -23,8 +23,9 @@ const ReviewOrder = () => {
 
   const [current, setCurrent] = useState(0);
   const next = () => {
-    setCurrent(current + 1);
-  };
+    (setCurrent(current + 1));
+    };
+
   const items = steps.map((item) => ({
     key: item.title,
     title: item.title,
